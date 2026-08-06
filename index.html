@@ -188,6 +188,36 @@
   .dr-info strong { font-size: 0.95rem; color: var(--navy); font-weight: 600; display: block; }
   .dr-info span { font-size: 0.8rem; color: var(--muted); }
 
+  /* MEET THE STAFF */
+  .staff { background: var(--off-white); }
+  .staff-header { text-align: center; max-width: 640px; margin: 0 auto 3.5rem; }
+  .staff-header .section-sub { margin: 0.75rem auto 0; }
+  .staff-group { margin-bottom: 3rem; }
+  .staff-group:last-child { margin-bottom: 0; }
+  .staff-group-title {
+    font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .staff-group-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .staff-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .staff-card {
+    background: white; border-radius: var(--radius-lg); overflow: hidden;
+    border: 1px solid var(--border); transition: all 0.2s;
+  }
+  .staff-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); border-color: var(--sky); }
+  .staff-photo { width: 100%; aspect-ratio: 1 / 1; background: var(--sky-light); overflow: hidden; }
+  .staff-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .staff-photo.placeholder {
+    display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem;
+    color: var(--navy-mid); border-bottom: 2px dashed rgba(13,43,69,0.15);
+  }
+  .staff-photo.placeholder svg { width: 34px; height: 34px; fill: var(--navy-mid); opacity: 0.5; }
+  .staff-photo.placeholder p { font-size: 0.72rem; opacity: 0.6; font-weight: 500; text-align: center; padding: 0 0.5rem; }
+  .staff-info { padding: 1.1rem 1.2rem; }
+  .staff-info strong { display: block; font-size: 0.98rem; color: var(--navy); font-weight: 600; margin-bottom: 2px; }
+  .staff-info span { font-size: 0.8rem; color: var(--muted); }
+
   /* SERVICES */
   .services { background: var(--off-white); }
   .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1.5rem; }
@@ -356,6 +386,7 @@
     .hero-stats { gap: 1.5rem; }
     .about { grid-template-columns: 1fr; gap: 2rem; }
     .about-visual { display: none; }
+    .staff-grid { grid-template-columns: 1fr 1fr; }
     .services-grid-main { grid-template-columns: 1fr 1fr; }
     .reviews-grid { grid-template-columns: 1fr; }
     .location-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -366,6 +397,7 @@
     .services-header { flex-direction: column; align-items: flex-start; }
   }
   @media (max-width: 600px) {
+    .staff-grid { grid-template-columns: 1fr; }
     .services-grid-main { grid-template-columns: 1fr; }
     .insurance-logos { grid-template-columns: 1fr 1fr; }
   }
@@ -386,6 +418,7 @@
   </a>
   <div class="nav-links">
     <a href="#about">About</a>
+    <a href="#staff">Meet the Staff</a>
     <a href="#services">Services</a>
     <a href="#reviews">Reviews</a>
     <a href="#location">Hours &amp; Location</a>
@@ -492,12 +525,136 @@
       </div>
     </div>
     <div class="dr-card" style="margin-top: 0.75rem;">
-      <div class="dr-avatar">TH</div>
+      <div class="dr-avatar">EN</div>
       <div class="dr-info">
-        <strong>Dr. Tristan A. Hill, DDS</strong>
+        <strong>Dr. Ellie Nobert, DDS</strong>
         <span>Associate Dentist · Turner Family Dentistry</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- MEET THE STAFF -->
+<section class="staff" id="staff">
+  <div class="staff-header">
+    <div class="section-label">Our Team</div>
+    <h2 class="section-title">Meet the Staff</h2>
+    <p class="section-sub">The friendly, experienced team behind every visit to Turner Family Dentistry.</p>
+  </div>
+
+  <div class="staff-group">
+    <h3 class="staff-group-title">Dentists</h3>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-photo placeholder">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <p>[ Photo Placeholder ]</p>
+        </div>
+        <div class="staff-info">
+          <strong>Dr. John W. Turner, DDS</strong>
+          <span>Dentist</span>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-photo"><img src="images/staff/ellie-nobert.jpg" alt="Dr. Ellie Nobert, DDS"></div>
+        <div class="staff-info">
+          <strong>Dr. Ellie Nobert, DDS</strong>
+          <span>Dentist</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="staff-group">
+    <h3 class="staff-group-title">Hygienists</h3>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-photo"><img src="images/staff/tee-smith.jpg" alt="Tee Smith"></div>
+        <div class="staff-info">
+          <strong>Tee Smith</strong>
+          <span>Hygienist</span>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-photo"><img src="images/staff/nichole-thompson.jpg" alt="Nichole Thompson"></div>
+        <div class="staff-info">
+          <strong>Nichole Thompson</strong>
+          <span>Hygienist</span>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-photo"><img src="images/staff/megan-davis.jpg" alt="Megan Davis"></div>
+        <div class="staff-info">
+          <strong>Megan Davis</strong>
+          <span>Hygienist</span>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-photo"><img src="images/staff/rachel-dunlap.jpg" alt="Rachel Dunlap"></div>
+        <div class="staff-info">
+          <strong>Rachel Dunlap</strong>
+          <span>Hygienist</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="staff-group">
+    <h3 class="staff-group-title">Registered Dental Assistants</h3>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-photo placeholder">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <p>[ Photo Placeholder ]</p>
+        </div>
+        <div class="staff-info">
+          <strong>Melissa [ Last Name ]</strong>
+          <span>Registered Dental Assistant</span>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-photo"><img src="images/staff/kim-linebarger.jpg" alt="Kim Linebarger"></div>
+        <div class="staff-info">
+          <strong>Kim Linebarger</strong>
+          <span>Registered Dental Assistant</span>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-photo"><img src="images/staff/grace-plunk.jpg" alt="Grace Plunk"></div>
+        <div class="staff-info">
+          <strong>Grace Plunk</strong>
+          <span>Registered Dental Assistant</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="staff-group">
+    <h3 class="staff-group-title">Front Office</h3>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-photo"><img src="images/staff/nina-hale.jpg" alt="Nina Hale"></div>
+        <div class="staff-info">
+          <strong>Nina Hale</strong>
+          <span>Front Office</span>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-photo placeholder">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <p>[ Photo Placeholder ]</p>
+        </div>
+        <div class="staff-info">
+          <strong>Jennifer Turner</strong>
+          <span>Front Office</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="placeholder-notice">
+    <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2zm1-8c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm0-7C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+    <strong>Placeholder:</strong>&nbsp; Send us a photo and last name for Melissa and a photo for Dr. Turner and Jennifer Turner, and we'll finish this section.
   </div>
 </section>
 
@@ -759,6 +916,7 @@
     <div class="footer-col">
       <h4>Quick Links</h4>
       <a href="#about">About Us</a>
+      <a href="#staff">Meet the Staff</a>
       <a href="#services">Services</a>
       <a href="#reviews">Patient Reviews</a>
       <a href="#location">Hours &amp; Location</a>
@@ -780,7 +938,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Turner Family Dentistry, PLLC · Dr. John W. Turner, DDS · Dr. Tristan A. Hill, DDS · All rights reserved.</p>
+    <p>© 2026 Turner Family Dentistry, PLLC · Dr. John W. Turner, DDS · Dr. Ellie Nobert, DDS · All rights reserved.</p>
     <p>[ Privacy Policy ] &nbsp; [ Sitemap ]</p>
   </div>
 </footer>
