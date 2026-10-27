@@ -954,7 +954,8 @@ document.querySelector('.contact-form-card').addEventListener('submit', function
   const name = (fields.get('First Name') + ' ' + fields.get('Last Name')).trim();
 
   // Rebuilt so the email shows clean labels in this order
-  const data = new FormData();
+  // URL-encoded rather than multipart, which FormSubmit sometimes misparses
+  const data = new URLSearchParams();
   data.append('_subject', 'New message from ' + name + ' - Turner Family Dentistry');
   data.append('_template', 'table');
   data.append('_replyto', fields.get('email'));
