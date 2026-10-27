@@ -950,9 +950,18 @@ document.querySelector('.contact-form-card').addEventListener('submit', function
   const form = this;
   const button = form.querySelector('.form-submit');
   const status = form.querySelector('.form-status');
-  const data = new FormData(form);
-  const name = (data.get('First Name') + ' ' + data.get('Last Name')).trim();
-  data.set('_subject', 'New message from ' + name + ' - Turner Family Dentistry');
+  const fields = new FormData(form);
+  const name = (fields.get('First Name') + ' ' + fields.get('Last Name')).trim();
+
+  // Rebuilt so the email shows clean labels in this order
+  const data = new FormData();
+  data.append('_subject', 'New message from ' + name + ' - Turner Family Dentistry');
+  data.append('_template', 'table');
+  data.append('_replyto', fields.get('email'));
+  data.append('Name', name);
+  data.append('Email', fields.get('email'));
+  data.append('Phone', fields.get('Phone'));
+  data.append('Message', fields.get('Message'));
 
   button.disabled = true;
   button.textContent = 'Sending…';
